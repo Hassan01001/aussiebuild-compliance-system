@@ -1,3 +1,7 @@
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '1.1.1.1']);
+dns.setDefaultResultOrder('ipv4first');
+
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -6,7 +10,7 @@ const connectDB = require('./config/db');
 // Load env vars
 dotenv.config();
 
-// Connect to database
+
 connectDB();
 
 const app = express();
